@@ -1,0 +1,9 @@
+target/
+*.db
+*.db-shm
+*.db-wal
+.env
+__pycache__/
+
+# Local secrets/configuration files
+.env.*
