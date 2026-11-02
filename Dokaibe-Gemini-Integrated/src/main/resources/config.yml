@@ -1,0 +1,83 @@
+# DOKAIBE AI configuration.
+# Keep your Gemini API key private. Do not commit the live server config to GitHub.
+
+identity:
+  display-name: "DOKAIBE"
+  prefix: "[DOKAIBE AI]"
+  icon: "✦"
+  primary-color: "#B78AFF"
+  secondary-color: "#8B6A36"
+  player-format: "{prefix} {message}"
+  admin-format: "{prefix} <dark_gray>•</dark_gray> <#B78AFF>ADMIN</#B78AFF> {message}"
+  owner-format: "{prefix} <dark_gray>•</dark_gray> <#D9A441>SUPREME FOUNDER</#D9A441> {message}"
+  system-format: "{prefix} {message}"
+  activation-message: "<italic>✦ Dokaibe has awakened.</italic>"
+  shutdown-message: "<italic>✦ Dokaibe has gone offline.</italic>"
+  founder-name: "Zeroxxxy"
+  founder-title: "Supreme Founder"
+
+security:
+  founder-uuid: "00000000-0000-0000-0000-000000000000"
+  owner-uuids: []
+  admin-uuids: []
+  offline-mode-warning: true
+  require-owner-pin: false
+  owner-pin-hash: ""
+  max-chat-messages-per-minute: 8
+
+activation:
+  start-enabled: false
+  redstone:
+    enabled: false
+    world: "world"
+    x: 0
+    y: 64
+    z: 0
+    powered-state: true
+
+chat:
+  trigger: "@"
+  legacy-trigger: "Dokaibe"
+  rules:
+    - "Be respectful. No cheating, exploiting, harassment, or griefing."
+    - "Follow staff instructions and protect other players' builds."
+  help-message: "Ask me about server rules, online players, or basic Minecraft help."
+
+# Gemini API configuration.
+# Put your key in gemini.api-key OR use the legacy ai.api-key field below.
+# The plugin also checks the GEMINI_API_KEY environment variable.
+gemini:
+  api-key: ""
+
+ai:
+  enabled: true
+  provider: "gemini"
+  model: "gemini-2.5-flash-lite"
+  api-key: "" # Compatibility with the original Dokaibe config.
+  timeout-seconds: 25
+  cooldown-seconds: 10
+  max-message-length: 500
+  max-history-messages: 10 # Number of user/model exchanges retained per player.
+  max-output-tokens: 250
+  system-prompt: "You are Dokaibe, a friendly Minecraft server companion. Be helpful, natural, and concise. Remember the player's conversation history. Never claim to have performed server actions. Never execute or invent console commands, grant OP, change permissions, ban players, or alter server settings. You only chat."
+
+discord:
+  bridge-enabled: false
+  bridge-host: "127.0.0.1"
+  bridge-port: 8765
+  bridge-token: ""
+  owner-user-ids: []
+  admin-user-ids: []
+  webhook-url: ""
+
+monitoring:
+  enabled: true
+  report-joins-leaves: true
+  report-deaths: true
+
+actions:
+  require-confirmation: true
+  temporary-op-max-minutes: 10
+
+database:
+  file: "dokaibe.db"
